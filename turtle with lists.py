@@ -7,18 +7,22 @@ turtle_rotation = [45, 90, 135, 180, 225, 270, 315, 360]
 turtle_movement = [20, 50, 71, 100]
 
 
-def start_pozition():
+def start_point():
+    """The function takes the turtle to the start point. """
+
     turtle.penup()
     turtle.backward(turtle_movement[3]*4)
 
 def next_number ():
+    """The function make backdown from the number. """
+
     turtle.penup()
     turtle.right(turtle_rotation[1])
     turtle.forward(turtle_movement[0])
 
 
 def number_one():
-    '''The function draws one. '''
+    """The function draws one. """
    
     turtle.penup()
     turtle.forward(turtle_movement[1])
@@ -38,6 +42,8 @@ def number_one():
 
 
 def number_two():
+    """The function draws two. """
+
     turtle.pendown()
     turtle.forward(turtle_movement[1])
     turtle.right(turtle_rotation[1])
@@ -53,6 +59,8 @@ def number_two():
 
 
 def number_three():
+    """The function draws three. """
+
     turtle.pendown()
     turtle.forward(turtle_movement[1])
     turtle.right(turtle_rotation[2])
@@ -70,6 +78,8 @@ def number_three():
 
 
 def number_four():
+    """The function draws four. """
+
     turtle.pendown()
     turtle.right(turtle_rotation[1])
     turtle.forward(turtle_movement[1])
@@ -83,6 +93,8 @@ def number_four():
 
 
 def number_five():
+    """The function draws five. """
+
     turtle.pendown()
     turtle.forward(turtle_movement[1])
     turtle.backward(turtle_movement[1])
@@ -102,6 +114,8 @@ def number_five():
 
 
 def number_six():
+    """The function draws six. """
+
     turtle.penup()
     turtle.right(turtle_rotation[1])
     turtle.forward(turtle_movement[1])
@@ -120,6 +134,8 @@ def number_six():
 
 
 def number_seven():
+    """The function draws seven. """
+
     turtle.pendown()
     turtle.forward(turtle_movement[1])
     turtle.right(turtle_rotation[2])
@@ -135,6 +151,8 @@ def number_seven():
 
 
 def number_eight():
+    """The function draws eight. """
+
     turtle.pendown()
     turtle.forward(turtle_movement[1])
     turtle.backward(turtle_movement[1])
@@ -153,6 +171,8 @@ def number_eight():
 
 
 def number_nine():
+    """The function draws nine. """
+
     turtle.pendown()
     turtle.forward(turtle_movement[1])
     turtle.backward(turtle_movement[1])
@@ -173,6 +193,8 @@ def number_nine():
 
 
 def number_zero():
+    """The function draws zero. """
+
     turtle.pendown()
     turtle.forward(turtle_movement[1])
     turtle.backward(turtle_movement[1])
@@ -186,13 +208,38 @@ def number_zero():
 
 
 def post_index_maker():
-    number_zero()
-    number_six()
-    number_nine()
-    number_two()
+    """
+    The function asks the user for a number, 
+    then draws the number that was entered by the user
+    """
+
+    start_point()
+    general_number = str(input("Введіть число: "))
+    general_number_list = list(general_number)
+    number_pozition = -1
+    for i in range (len(general_number)):
+        number_pozition += 1
+
+        if int(general_number_list[number_pozition]) == 1:
+            number_one()
+        elif int(general_number_list[number_pozition]) == 2:
+            number_two()
+        elif int(general_number_list[number_pozition]) == 3:
+            number_three()
+        elif int(general_number_list[number_pozition]) == 4:
+            number_four()
+        elif int(general_number_list[number_pozition]) == 5:
+            number_five()
+        elif int(general_number_list[number_pozition]) == 6:
+            number_six()      
+        elif int(general_number_list[number_pozition]) == 7:
+            number_seven()
+        elif int(general_number_list[number_pozition]) == 8:
+            number_eight()    
+        elif int(general_number_list[number_pozition]) == 9:
+            number_nine()
+        else:
+            number_zero()    
 
 
-start_pozition()
 post_index_maker()
-turtle.penup()
-turtle.forward(1000)
